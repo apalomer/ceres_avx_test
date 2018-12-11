@@ -38,7 +38,9 @@ int main()
 
   // Solve
   ceres::Solver::Summary summary;
+  std::cout << "Solving problem" << std::endl;
   ceres::Solve(options, &problem, &summary);
+  std::cout << "Problem solved" << std::endl;
 
   // Display results
   std::cout << summary.FullReport() << std::endl;

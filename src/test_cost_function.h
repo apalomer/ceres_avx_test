@@ -4,6 +4,8 @@
 #include <vector>
 #include "point2.h"
 
+#include <iostream>
+
 class TestCostFunction
 {
 public:
@@ -12,6 +14,7 @@ public:
   template <typename T>
   bool operator()(T const* const* parameters, T* residuals) const
   {
+    std::cout << "Evaluating cost function" << std::endl;
     T m = parameters[0][0];
     T n = parameters[0][1];
     T a = -m;
