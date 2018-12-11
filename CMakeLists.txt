@@ -7,11 +7,13 @@ project(ceres_avx_test)
 
 # Compiler options
 set(CMAKE_CXX_COMPILER clang++)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release")
+endif()
 add_compile_options(-std=c++17)
 add_compile_options(-Wall)
 add_compile_options(-Wextra)
 add_compile_options(-fno-tree-vectorize)
-add_compile_options(-mavx2)
 add_compile_options(-march=native)
 
 # Ceres
